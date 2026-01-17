@@ -4,6 +4,7 @@ const express = require("express");
 const cors = require("cors");
 
 const megawattRoutes = require("./routes/megawatt"); // your API router
+const dpsRoutes = require('./routes/dps');
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 
 // Routes
 app.use("/api/megawatt", megawattRoutes);
+app.use('/dps', dpsRoutes);
 
 // Health check
 app.get("/health", (req, res) => {

@@ -4,6 +4,7 @@ import "./App.css";
 
 //const API_URL = "http://localhost:3001/api/megawatt";
 const API_URL = "/api/megawatt";
+//const API_URL = "http://172.16.0.59:3001/api/megawatt";
 
 function App() {
   const [data, setData] = useState(null);
@@ -11,6 +12,7 @@ function App() {
 
   const fetchData = async () => {
     try {
+      // ✅ Do not send source in POST; backend decides
       const res = await axios.post(API_URL);
       if (res.data.errorFlag === "F") {
         setData(res.data);
@@ -28,26 +30,11 @@ function App() {
 
   useEffect(() => {
     fetchData();
-
-    // Poll backend every 15s
     const interval = setInterval(fetchData, 15000);
-
-    // Auto-reload every 60s (optional)
     const reloadTimeout = setTimeout(() => window.location.reload(), 60000);
-
-    // ✅ Network check every 10s to reload if offline
-    const networkCheck = setInterval(() => {
-      if (!navigator.onLine) {
-        console.warn("Network offline. Reloading...");
-        window.location.reload();
-      }
-    }, 10000);
-
-    // Cleanup on unmount
     return () => {
       clearInterval(interval);
       clearTimeout(reloadTimeout);
-      clearInterval(networkCheck);
     };
   }, []);
 
@@ -59,6 +46,7 @@ function App() {
       <div className="header">THE DURGAPUR PROJECTS LIMITED</div>
       <div className="sub-header">Live Power Monitoring Dashboard</div>
 
+      {/* ✅ Show source from backend */}
       <div className="source-box">
         Source: <span className="source-label">{data.source.charAt(0)}</span>
       </div>
@@ -67,6 +55,7 @@ function App() {
         <div className="live-dot"></div> LIVE GENERATION DATA
       </div>
 
+      {/* Top Info Table */}
       <table className="info-table">
         <tbody>
           <tr>
@@ -80,6 +69,7 @@ function App() {
         </tbody>
       </table>
 
+      {/* Main Data Table */}
       <table className="main-table">
         <tbody>
           <tr>
@@ -101,6 +91,7 @@ function App() {
         </tbody>
       </table>
 
+      {/* Info Bar */}
       <div className="info-bar">
         <marquee scrollamount="6">
           EVER HIGHEST YEARLY GENERATION (2024-25)(80.68% PLF) → 3887MU |
@@ -110,12 +101,13 @@ function App() {
         </marquee>
       </div>
 
+      {/* Footer Bar */}
       <div className="footer-bar">
         <marquee scrollamount="8">
           Happiness in life is Ultimate Treasure, Do your job taking SAFETY Measure... 
           Work with pride, put safety in every stride...
           <span className="bengali-text">
-            সুরক্ষা নিশ্চিত হলে কাজে আসে গতি, নিরাপদ উৎপাদনে হয় জাতীয় প্রগতি।। 
+            সুরক্ষা নিশ্চিত হলে কাজে আসে গতি, নিরাপদ উৎপাদনে হয় জাতীয় প্রগতি।।
           </span>
         </marquee>
       </div>
