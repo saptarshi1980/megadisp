@@ -55,10 +55,6 @@ export default function App() {
       </table>
 
       {/* ===== Section Title ===== */}
-      <div className="source-box">
-         <span className="source-label"> Source: {data.source.charAt(0)}</span>
-      </div>
-
       <table className="section-title">
         <tbody>
           <tr>
@@ -78,7 +74,7 @@ export default function App() {
             <td>{data.reading_date}</td>
             <th>Time</th>
             <td>{data.reading_time}</td>
-            <th>Frequency (Hz)</th>
+            <th>Freq.(Hz)</th>
             <td>{data.frequency}</td>
           </tr>
         </tbody>
@@ -90,6 +86,8 @@ export default function App() {
           <tr>
             <th>Unit</th>
             <th>Generation (MW)</th>
+            <th>LF (%)</th>
+            <th>APC (%)</th>
             <th className="gap"></th>
             <th>Block No</th>
             <td>{data.block_no}</td>
@@ -98,6 +96,8 @@ export default function App() {
           <tr>
             <th>#7</th>
             <td>{data.seven}</td>
+            <td>{data.plf_7}</td>
+            <td>{data.apc_7_p}</td>
             <th className="gap"></th>
             <th>DC (MW)</th>
             <td>{data.dc_sch}</td>
@@ -106,6 +106,8 @@ export default function App() {
           <tr>
             <th>#8</th>
             <td>{data.eight}</td>
+            <td>{data.plf_8}</td>
+            <td>{data.apc_8_p}</td>
             <th className="gap"></th>
             <th>SG (MW)</th>
             <td>{data.sg_sch}</td>
@@ -114,6 +116,8 @@ export default function App() {
           <tr className="total-row">
             <th>Total</th>
             <td>{data.total}</td>
+            <td>{data.plf_stn}</td>
+            <td>{data.apc_total_p}</td>
             <th className="gap"></th>
             <th>AG (MW)</th>
             <td>{data.act_sent_out}</td>

@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f5faff;
+  color: #00334d;
+}
+
+.app-container {
+  text-align: center;
+  overflow-x: hidden;
+  padding-bottom: 20px;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+  padding: 10px 0;
+  background: #005fb8;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 900;
+  border-bottom: 3px solid #003f7a;
+}
+
+.sub-header {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 2px;
+  color: #004a7a;
+}
+
+/* ================= SOURCE ================= */
+
+.source-box {
+  text-align: right;
+  padding: 5px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #005fb8;
+}
+
+.source-label {
+  color: yellow;
+  background: #333;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ================= LIVE ================= */
+
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #d32f2f;
+}
+
+.live-dot {
+  width: 12px;
+  height: 12px;
+  background: #00cc44;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* ================= TABLES ================= */
+
+.info-table,
+.main-table {
+  width: 90%;
+  margin: 10px auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.info-table th,
+.info-table td,
+.main-table th,
+.main-table td {
+  border: 1px solid #bcd7f7;
+  padding: 12px;
+  vertical-align: middle;
+  background-color: white; /* Ensure white background */
+}
+
+/* Headers stay NORMAL */
+.info-table th,
+.main-table th {
+  background: #e8f2ff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #00334d;
+}
+
+/* ================= TOP INFO VALUES ================= */
+
+.info-label {
+  font-weight: 900;
+  font-size: 2.2rem; /* Increased from 1.6rem */
+  color: #b35900;
+  background: #fff;
+  border: 2px solid #b35900;
+  border-radius: 50px;
+  padding: 8px 20px;
+  display: inline-block;
+  min-width: 180px;
+}
+
+/* ================= MAIN TD VALUES - MUCH LARGER ================= */
+
+/* Make the table cells bigger */
+.main-table td {
+  font-size: 4rem; /* 🔥 HUGE - Increased from 2.4rem */
+  font-weight: 900;
+  color: #004b91;
+  height: 100px;
+  vertical-align: middle;
+}
+
+/* Label inside TD should inherit styles */
+.main-table td label {
+  all: unset;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* Total emphasis - EVEN BIGGER */
+.total-val {
+  font-size: 5rem !important; /* 🔥 EXTRA HUGE - Increased from 3rem */
+  color: #cc0000;
+}
+
+/* Make sure headers are also slightly larger */
+.main-table th {
+  font-size: 1.4rem; /* Slightly larger headers */
+}
+
+/* ================= INFO BAR ================= */
+
+.info-bar {
+  background: #003f88;
+  color: white;
+  font-size: 1rem;
+  padding: 8px 0;
+  margin-top: 20px;
+}
+
+/* ================= FOOTER ================= */
+
+.footer-bar {
+  background: #006400;
+  color: white;
+  font-size: 1rem;
+  padding: 8px 0;
+  margin-top: 5px;
+}
+
+.bengali-text {
+  font-family: "Nirmala UI", sans-serif;
+  margin-left: 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1200px) {
+  .main-table td {
+    font-size: 3.2rem;
+  }
+  
+  .total-val {
+    font-size: 4rem !important;
+  }
+  
+  .info-label {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-table td {
+    font-size: 2.8rem;
+  }
+  
+  .total-val {
+    font-size: 3.5rem !important;
+  }
+  
+  .main-table th {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-table td {
+    font-size: 2.2rem;
+    height: 80px;
+  }
+  
+  .total-val {
+    font-size: 2.8rem !important;
+  }
+  
+  .info-label {
+    font-size: 1.6rem;
+    min-width: 140px;
+    padding: 6px 15px;
+  }
+  
+  .main-table {
+    width: 95%;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-table td {
+    font-size: 1.8rem;
+    height: 70px;
+    padding: 8px;
+  }
+  
+  .total-val {
+    font-size: 2.2rem !important;
+  }
+  
+  .info-label {
+    font-size: 1.4rem;
+    min-width: 120px;
+    padding: 4px 12px;
+  }
+  
+  .header {
+    font-size: 1.5rem;
+  }
+  
+  .sub-header {
+    font-size: 1rem;
+  }
+}
