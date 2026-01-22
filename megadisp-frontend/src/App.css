@@ -33,7 +33,7 @@ th {
 
 td {
   border: 3px solid red;
-  font-size: 3vw;
+  font-size: 6vw;
   font-weight: bold;
   text-align: center;
 }
@@ -70,8 +70,12 @@ td {
 }
 
 /* DATA */
-.data-table {
-  margin-top: 0.5vh;
+.data-table th {
+  font-size: 2vw;
+}
+
+.data-table td {
+  font-size: 3.0vw;
 }
 
 .gap {
@@ -111,7 +115,7 @@ td {
 .source-label {
   font-size: 1.0vw; 
   color: #aa3a3a;          /* text color */
-  background: #a19d9d;        /* optional background */
+  background: #a19d9d;          /* optional background */
   padding: 2px 8px;
   border-radius: 4px;
   font-weight: bold;
