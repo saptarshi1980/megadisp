@@ -54,14 +54,11 @@ export default function App() {
         </tbody>
       </table>
 
-      {/* ===== Source ===== */}
+      {/* ===== Section Title ===== */}
       <div className="source-box">
-        <span className="source-label">
-          Source: {data.source.charAt(0)}
-        </span>
+         <span className="source-label"> Source: {data.source.charAt(0)}</span>
       </div>
 
-      {/* ===== Section Title ===== */}
       <table className="section-title">
         <tbody>
           <tr>
@@ -81,18 +78,19 @@ export default function App() {
             <td>{data.reading_date}</td>
             <th>Time</th>
             <td>{data.reading_time}</td>
-            <th>Freq. (Hz)</th>
+            <th>Frequency (Hz)</th>
             <td>{data.frequency}</td>
           </tr>
         </tbody>
       </table>
 
-      {/* ===== Main Generation ===== */}
+      {/* ===== Main Generation Table ===== */}
       <table className="data-table">
         <tbody>
           <tr>
             <th>Unit</th>
             <th>Generation (MW)</th>
+            <th className="gap"></th>
             <th>Block No</th>
             <td>{data.block_no}</td>
           </tr>
@@ -100,6 +98,7 @@ export default function App() {
           <tr>
             <th>#7</th>
             <td>{data.seven}</td>
+            <th className="gap"></th>
             <th>DC (MW)</th>
             <td>{data.dc_sch}</td>
           </tr>
@@ -107,6 +106,7 @@ export default function App() {
           <tr>
             <th>#8</th>
             <td>{data.eight}</td>
+            <th className="gap"></th>
             <th>SG (MW)</th>
             <td>{data.sg_sch}</td>
           </tr>
@@ -114,6 +114,7 @@ export default function App() {
           <tr className="total-row">
             <th>Total</th>
             <td>{data.total}</td>
+            <th className="gap"></th>
             <th>AG (MW)</th>
             <td>{data.act_sent_out}</td>
           </tr>
@@ -126,7 +127,7 @@ export default function App() {
 
       {/* ===== Info Marquee ===== */}
       <div className="above-footer">
-        <marquee scrollamount="15">
+        <marquee scrollamount="6">
           EVER HIGHEST YEARLY GENERATION (2024-25)(80.68% PLF) → 3887 MU |
           LOWEST APC → 10.31% |
           HIGHEST RAKES → 695 Nos.
@@ -135,9 +136,11 @@ export default function App() {
 
       {/* ===== Footer ===== */}
       <div className="footer">
-        <marquee scrollamount="10">
+        <marquee scrollamount="8">
           Happiness in life is Ultimate Treasure, Do your job taking SAFETY Measure...
-          <span className="bn"> সুরক্ষা নিশ্চিত হলে কাজে আসে গতি</span>
+          <span className="bn">
+            সুরক্ষা নিশ্চিত হলে কাজে আসে গতি
+          </span>
         </marquee>
       </div>
 

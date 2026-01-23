@@ -69,9 +69,6 @@ td {
   color: blue;
 }
 
-.data-table {
-  margin-top: 3.0vh;   /* adjust: 1vh–2vh as needed */
-}
 /* DATA */
 .data-table th {
   font-size: 2vw;
