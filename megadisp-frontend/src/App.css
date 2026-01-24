@@ -1,3 +1,4 @@
+/* ===== GLOBAL ===== */
 html,
 body,
 #root {
@@ -7,98 +8,102 @@ body,
 }
 
 .page {
-  height: 100%;
+  min-height: 100%;
   background-color: #fff7ff;
-  /* background-image: url("/dpl.png"); */
   background-repeat: no-repeat;
   background-size: auto 80vh;
   background-position: 50% 10vh;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* TABLE BASE */
+/* ===== TABLE BASE ===== */
 table {
   width: 100%;
   border-collapse: collapse;
   table-layout: fixed;
-  color: blue;
 }
 
-th {
+th,
+td {
   border: 3px solid red;
-  color: green;
-  font-size: 2.5vw;
   text-align: center;
+}
+
+/* ===== TEXT SIZES (RESPONSIVE & SAFE) ===== */
+th {
+  color: green;
+  font-size: clamp(14px, 2vw, 28px);
 }
 
 td {
-  border: 3px solid red;
-  font-size: 6vw;
+  color: blue;
+  font-size: clamp(20px, 4vw, 60px);
   font-weight: bold;
-  text-align: center;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .header-table th {
   border: none;
 }
 
 .title-main {
-  font-size: 2.0vw;
+  font-size: clamp(18px, 2vw, 36px);
   color: green;
 }
 
 .title-sub {
-  font-size: 1.0vw;
+  font-size: clamp(12px, 1vw, 18px);
 }
 
 .title-tagline {
-  font-size: 1.0vw;
+  font-size: clamp(12px, 1vw, 18px);
   color: red;
   font-style: italic;
 }
 
-/* CENTER */
-.center {
-  text-align: center;
-}
-
+/* ===== SECTION TITLE ===== */
 .section-title th {
   border: none;
-  font-size: 1.5vw;
+  font-size: clamp(14px, 1.5vw, 26px);
   color: blue;
 }
 
+/* ===== DATA TABLE ===== */
 .data-table {
-  margin-top: 3.0vh;   /* adjust: 1vh–2vh as needed */
+  margin-top: 3vh;
 }
-/* DATA */
+
 .data-table th {
-  font-size: 2vw;
+  font-size: clamp(14px, 2vw, 28px);
 }
 
 .data-table td {
-  font-size: 3.0vw;
+  font-size: clamp(20px, 3.5vw, 52px);
 }
 
-.gap {
-  border: none;
-  width: 2vw;
-}
-
-/* NOTE */
+/* ===== NOTE ===== */
 .note {
-  text-align: left;
-  font-size: 1.5vw;
   margin-top: 1vh;
+  text-align: left;
+  font-size: clamp(12px, 1.5vw, 20px);
 }
 
-/* FOOTERS */
+/* ===== SOURCE ===== */
+.source-label {
+  font-size: clamp(10px, 1vw, 16px);
+  color: #aa3a3a;
+  background: #a19d9d;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* ===== FOOTERS ===== */
 .above-footer {
   position: fixed;
   bottom: 7vh;
   width: 100%;
-  font-size: 2.5vw;
+  font-size: clamp(14px, 2.5vw, 36px);
   font-weight: bold;
   color: #74e128;
 }
@@ -107,7 +112,7 @@ td {
   position: fixed;
   bottom: 1vh;
   width: 100%;
-  font-size: 2.5vw;
+  font-size: clamp(14px, 2.5vw, 36px);
   color: red;
 }
 
@@ -115,11 +120,32 @@ td {
   font-family: "Nirmala UI";
 }
 
-.source-label {
-  font-size: 1.0vw; 
-  color: #aa3a3a;          /* text color */
-  background: #a19d9d;          /* optional background */
-  padding: 2px 8px;
-  border-radius: 4px;
-  font-weight: bold;
+/* ===== MOBILE TUNING ===== */
+@media (max-width: 768px) {
+  table {
+    table-layout: auto;
+  }
+
+  .above-footer,
+  .footer {
+    position: static;
+    margin-top: 2vh;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .main-table th {
+    font-size: clamp(18px, 2.5vw, 36px);
+    padding: 1.2vh 0;
+  }
+
+  .main-table td {
+    font-size: clamp(26px, 4.5vw, 70px);
+    padding: 1.6vh 0;
+  }
+
+  .main-table {
+    margin-top: 4vh;
+  }
 }

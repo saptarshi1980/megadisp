@@ -1,0 +1,125 @@
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.page {
+  height: 100%;
+  background-color: #fff7ff;
+  /* background-image: url("/dpl.png"); */
+  background-repeat: no-repeat;
+  background-size: auto 80vh;
+  background-position: 50% 10vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* TABLE BASE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  color: blue;
+}
+
+th {
+  border: 3px solid red;
+  color: green;
+  font-size: 2.5vw;
+  text-align: center;
+}
+
+td {
+  border: 3px solid red;
+  font-size: 6vw;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* HEADER */
+.header-table th {
+  border: none;
+}
+
+.title-main {
+  font-size: 2.0vw;
+  color: green;
+}
+
+.title-sub {
+  font-size: 1.0vw;
+}
+
+.title-tagline {
+  font-size: 1.0vw;
+  color: red;
+  font-style: italic;
+}
+
+/* CENTER */
+.center {
+  text-align: center;
+}
+
+.section-title th {
+  border: none;
+  font-size: 1.5vw;
+  color: blue;
+}
+
+.data-table {
+  margin-top: 3.0vh;   /* adjust: 1vh–2vh as needed */
+}
+/* DATA */
+.data-table th {
+  font-size: 2vw;
+}
+
+.data-table td {
+  font-size: 3.0vw;
+}
+
+.gap {
+  border: none;
+  width: 2vw;
+}
+
+/* NOTE */
+.note {
+  text-align: left;
+  font-size: 1.5vw;
+  margin-top: 1vh;
+}
+
+/* FOOTERS */
+.above-footer {
+  position: fixed;
+  bottom: 7vh;
+  width: 100%;
+  font-size: 2.5vw;
+  font-weight: bold;
+  color: #74e128;
+}
+
+.footer {
+  position: fixed;
+  bottom: 1vh;
+  width: 100%;
+  font-size: 2.5vw;
+  color: red;
+}
+
+.bn {
+  font-family: "Nirmala UI";
+}
+
+.source-label {
+  font-size: 1.0vw; 
+  color: #aa3a3a;          /* text color */
+  background: #a19d9d;          /* optional background */
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}

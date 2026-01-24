@@ -88,7 +88,7 @@ export default function App() {
       </table>
 
       {/* ===== Main Generation ===== */}
-      <table className="data-table main-table">
+      <table className="data-table">
         <tbody>
           <tr>
             <th>Unit</th>
